@@ -9,5 +9,11 @@ int main()
 
     today.showDate();
     d1.showDate();
+    cout << "-----------------------------------\n\n";
+
+    today.nextDate();
+    d1.prevDate();
+    today.showDate();
+    d1.showDate();
 }
 
