@@ -8,10 +8,16 @@ Date::Date()
     localtime_s(obj, &pc_time); //VS
    // obj = localtime(&pc_time); //Xcode, Clion, Online
 
+    year = obj->tm_year + 1900;
+    month = obj->tm_mon + 1;
+    day = obj->tm_mday;
 }
 
 Date::Date(int year, int month, int day)
 {
+    this->day = day;
+    this->month = month;
+    this->year = year;
 }
 
 bool Date::isLeapYear() const
@@ -61,6 +67,7 @@ int Date::getDay() const
 
 void Date::showDate() const
 {
+    cout << day / 10 << day % 10 << "." << month / 10 << month % 10 << "." << year << endl;
 }
 
 bool Date::valid() const
